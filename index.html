@@ -30,6 +30,7 @@
                         data.forEach(element => {
                             $("#field").append("<tr>"+"<th>"+element.id+"</th>"+"<td>"+element.name+"</td>"+"<td>"+element.age+"</td>"+"<td>"+element.major+"</td>"+"</tr>");
                         });
+                        $("#tablehead").css("visibility","visible");
                     }
                 }
             }
@@ -84,6 +85,9 @@
                 border-style: solid;
                 border-width: 3px;
             }
+            #tablehead{
+                visibility:hidden;
+            }
         </style>
     </head>
     
@@ -94,6 +98,14 @@
             </div>
 
             <table class="table table-striped">
+                <thead>
+                    <tr id="tablehead">
+                        <th scope="col">#id</th>
+                        <th scope="col">name</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Major</th>
+                    </tr>
+                </thead>
                 <tbody id="field"> </tbody>
             </table>
 
