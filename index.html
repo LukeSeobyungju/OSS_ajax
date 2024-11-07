@@ -28,12 +28,12 @@
                         $("#field").html("");
                         let data=JSON.parse(xhr.response);
                         data.forEach(element => {
-                            $("#field").append("<div>"+element.id+" "+element.name+" "+element.age+" "+element.major+"</div>");
+                            $("#field").append("<tr>"+"<th>"+element.id+"</th>"+"<td>"+element.name+"</td>"+"<td>"+element.age+"</td>"+"<td>"+element.major+"</td>"+"</tr>");
                         });
                     }
                 }
-
             }
+
             function create(){
                 const xhr=new XMLHttpRequest();
                 xhr.open("POST","https://6728190f270bd0b97554559c.mockapi.io/my_data/TeamMembers");
@@ -87,7 +87,11 @@
                 <button onclick="read()" class="btn btn-primary">GET DATA</button>
             </div>
 
-            <div id="field" style="margin:20px;">DATA</div>
+            <table class="table table-striped" style="margin:20px;">
+                <tbody id="field">
+                    
+                </tbody>
+            </table>
 
             <div>
                 <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addModal">ADD</button>
